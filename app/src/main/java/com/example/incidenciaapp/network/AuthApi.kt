@@ -7,6 +7,7 @@ import retrofit2.http.POST
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 
 interface AuthApi {
     @FormUrlEncoded
@@ -20,9 +21,11 @@ interface AuthApi {
     fun getIncidenciasDeFacultad(): Call<List<IncidenciaDTO>>
 
 
-    @POST("ruta/registrarIncidencia")
-    fun registrarIncidencia(@Body dto: IncidenciaDTO): Call<Void>
-
+    @POST("incidencia/save")
+    fun registrarIncidencia(
+        @Header("Authorization") token: String,
+        @Body dto: IncidenciaDTO
+    ): Call<Void>
 }
 
 

@@ -7,8 +7,8 @@ data class IncidenciaDTO(
     val fecha: String,
     val estado: String,
     val tipo: String,
-    val cifAlumno: Int?,
-    val cifProfesor: Int?,
+    val cifAlumno: String?,
+    val cifProfesor: String?,
     val nombreAlumno: String?,
     val nombreProfesor: String?
 )
